@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Generator</title>
+    <style>
+      p{
+        text-align: center;
+      }
+      h1{
+        text-align: center;
+      }
+      button{
+        display: block;
+        background-color: yellow;
+        width: 100px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RANDOME NUMBER GENERATOR</h1>
+    <p>Click the button to generate a random number:</p>
+    <button align="center" id="generateButton">Generate</button>
+    <p id="result"></p>
+    <script>
+      // ボタンを取得
+      const generateButton = document.getElementById("generateButton");
+
+      // 結果を表示するための要素を取得
+      const result = document.getElementById("result");
+
+      // ボタンがクリックされたときに実行する関数を定義
+      function generateRandomNumber() {
+        // ランダムな数字を生成
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        // 結果を表示
+        result.innerHTML = `The random number is: ${randomNumber}`;
+      }
+
+      // ボタンがクリックされたときに実行する関数を登録
+      generateButton.addEventListener("click", generateRandomNumber);
+    </script>
+  </body>
+</html>
